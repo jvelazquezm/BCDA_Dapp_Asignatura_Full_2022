@@ -2,7 +2,6 @@
 Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
 ### Requisitos
-- [Ganache](https://trufflesuite.com/ganache/ "Ganache")
 - Google Chrome
 - Extensión de Metamask
 - Vincular metamask con Ganache 
