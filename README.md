@@ -2,7 +2,7 @@
 Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
 ## Requisitos
-- [Named Link](https://trufflesuite.com/ganache/ "Ganache")
+- [Ganache](https://trufflesuite.com/ganache/ "Ganache")
 - Google Chrome
 - Extensión de Metamask
 - Vincular metamask con Ganache 
@@ -18,12 +18,14 @@ Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
 0. Tener arrancado Ganache con el workspace creado
 1. Acceder a la carpeta de Truffle
+
     cd Asignatura/truffle
-2. Compilar código del contrato
+
+Compilar código del contrato
 
     truffle compile
 
-3. Migrar contrato a la blockchain local que tenemos desplegada en Ganache
+Migrar contrato a la blockchain local que tenemos desplegada en Ganache
 
     truffle migrate
 
