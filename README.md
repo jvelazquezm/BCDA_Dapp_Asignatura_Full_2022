@@ -1,7 +1,7 @@
 # BCDA_Dapp_Asignatura_Full_2022
 Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
-## Requisitos
+### Requisitos
 
 - [Ganache](https://trufflesuite.com/ganache/ "Ganache")
 - Google Chrome
@@ -15,7 +15,7 @@ Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
     npm install create-react-app@4.0.3
 
-## Pasos para arrancar aplicación por primera vez
+### Pasos para arrancar aplicación por primera vez
 
 0. Tener arrancado Ganache con el workspace creado
 1. Acceder a la carpeta de Truffle
