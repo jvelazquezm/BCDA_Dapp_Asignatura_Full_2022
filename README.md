@@ -2,11 +2,18 @@
 Incluye la versión completa de la DAPP Asignatura desarrollada en BCDA
 
 ### Requisitos
+- [Ganache](https://trufflesuite.com/ganache/ "Ganache")
 - Google Chrome
 - Extensión de Metamask
 - Vincular metamask con Ganache 
 - Truffle 
-
+    ```
+    npm install truffle
+    ```
+- Librería "create-react-app" Versión 4.0.3 
+    ```
+    npm install create-react-app@4.0.3
+    ```
 ### Pasos para arrancar aplicación por primera vez:
 
 0. Tener arrancado Ganache con el workspace creado
