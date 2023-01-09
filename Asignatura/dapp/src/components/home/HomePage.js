@@ -2,8 +2,7 @@ import {useState} from "react";
 
 import {drizzleReactHooks} from '@drizzle/react-plugin'
 
-import SoyOwner from "../roles/SoyOwner";
-import SoyCoordinador from "../roles/SoyCoordinador";
+import SoyAlguno from "../roles/SoyAlguno";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
@@ -31,7 +30,7 @@ function HomePage() {
             <p>La direccion del owner es <b>{direccionOwner}</b></p>
             <p>La dirección del coordinador es <b>{direccionCoordinador}</b></p>
             <p>La asignatura está <b>{asignaturaCerrada ? "cerrada" : "abierta"}</b></p>
-            <SoyOwner>
+            <SoyAlguno owner>
                 <form>
                     <p>
                         Modificar dirección del Coordinador:  &nbsp;
@@ -49,8 +48,8 @@ function HomePage() {
                     </button>
                     <p> Último estado = {status}</p>
                 </form>
-            </SoyOwner>
-            <SoyCoordinador>
+            </SoyAlguno>
+            <SoyAlguno coordinador>
                 <form>
                     <button key="cerrarAsignatura" className="pure-button" type="button"
                             onClick={ev => {
@@ -62,7 +61,7 @@ function HomePage() {
                     </button>
                     <p> Último estado = {status}</p>
                 </form>
-            </SoyCoordinador>
+            </SoyAlguno>
 
         </>
     );

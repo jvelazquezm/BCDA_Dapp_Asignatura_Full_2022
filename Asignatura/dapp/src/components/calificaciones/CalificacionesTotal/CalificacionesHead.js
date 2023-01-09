@@ -1,4 +1,5 @@
 import {drizzleReactHooks} from '@drizzle/react-plugin'
+import SoyAlguno from '../../roles/SoyAlguno';
 
 const {useDrizzle} = drizzleReactHooks;
 
@@ -13,8 +14,14 @@ const CalificacionesHead = () => {
     for (let i = 0; i < el; i++) {
         thead.push(<th key={"chev-" + i}>E<sub>{i}</sub></th>);
     }
-
-    return <thead><tr>{thead}</tr></thead>;
+    return <thead>
+                <tr>
+                    {thead}
+                    <SoyAlguno profesor coordinador>
+                        <th key={"cnf"}>Nota final</th>
+                    </SoyAlguno>
+                </tr>
+            </thead>;
 };
 
 export default CalificacionesHead;

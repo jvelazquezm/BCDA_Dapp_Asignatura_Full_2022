@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import {drizzleReactHooks} from '@drizzle/react-plugin'
 
-import SoyProfesor from "../roles/SoyProfesor";
+import SoyAlguno from "../roles/SoyAlguno";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
@@ -26,7 +26,7 @@ const Calificar1 = () => {
     let [calificacion, setCalificacion] = useState("");
 
     return (<article className="AppMisDatos">
-        <SoyProfesor>
+        <SoyAlguno profesor>
 
             <h3>Calificar</h3>
 
@@ -61,7 +61,7 @@ const Calificar1 = () => {
 
                 <p> Último estado = {status}</p>
             </form>
-        </SoyProfesor>
+        </SoyAlguno>
     </article>);
 };
 
@@ -85,7 +85,7 @@ const Calificar2 = () => {
     let [calificacion, setCalificacion] = useState("");
 
     return (<article className="AppMisDatos">
-        <SoyProfesor>
+        <SoyAlguno profesor>
 
             <h3>Calificar</h3>
 
@@ -123,7 +123,7 @@ const Calificar2 = () => {
 
                 <p> Último estado = {status} </p>
             </form>
-        </SoyProfesor>
+        </SoyAlguno>
     </article>);
 };
 

@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import {drizzleReactHooks} from '@drizzle/react-plugin'
 
-import SoyOwner from "../roles/SoyOwner";
+import SoyAlguno from "../roles/SoyAlguno";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
@@ -23,7 +23,7 @@ const AñadirProfe = () => {
     let [profeNombre, setProfeNombre] = useState("");
 
     return (<article className="AppMisDatos">
-        <SoyOwner>
+        <SoyAlguno owner>
 
             <h3>Añadir Profesor</h3>
 
@@ -50,7 +50,7 @@ const AñadirProfe = () => {
 
                 <p> Último estado = {status} </p>
             </form>
-        </SoyOwner>
+        </SoyAlguno>
     </article>);
 };
 

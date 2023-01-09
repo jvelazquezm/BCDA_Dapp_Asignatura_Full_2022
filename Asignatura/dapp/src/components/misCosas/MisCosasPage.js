@@ -1,9 +1,6 @@
 import MisDatos from "./MisDatos";
 import MisNotas from "./MisNotas";
-import SoyProfesor from "../roles/SoyProfesor";
-import SoyOwner from "../roles/SoyOwner";
-import SoyCoordinador from "../roles/SoyCoordinador";
-import SoyAlumno from "../roles/SoyAlumno";
+import SoyAlguno from "../roles/SoyAlguno";
 
 
 const MisCosasPage = () => {
@@ -11,19 +8,22 @@ const MisCosasPage = () => {
     return <section className="AppMisCosas">
         <h2>Mis Cosas</h2>
         <MisDatos/>
-        <SoyOwner>
+
+        <SoyAlguno owner>
             <p>Mi rol es Owner</p>
-        </SoyOwner>
-        <SoyCoordinador>
+        </SoyAlguno>
+        <SoyAlguno coordinador>
             <p>Mi rol es Coordinador</p>
-        </SoyCoordinador>
-        <SoyProfesor>
+        </SoyAlguno>
+        <SoyAlguno profesor>
             <p>Mi rol es Profesor</p>
-        </SoyProfesor>
-        <SoyAlumno>
+        </SoyAlguno>
+        <SoyAlguno alumno>
             <p>Mi rol es Alumno</p>
-        </SoyAlumno> 
-        <MisNotas/>
+            <MisNotas/>
+        </SoyAlguno> 
+
+        
 
     </section>;
 }

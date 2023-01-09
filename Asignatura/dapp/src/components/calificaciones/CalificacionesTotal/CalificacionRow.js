@@ -1,4 +1,5 @@
 import {drizzleReactHooks} from '@drizzle/react-plugin'
+import SoyAlguno from '../../roles/SoyAlguno';
 
 const {useDrizzle} = drizzleReactHooks;
 
@@ -9,6 +10,10 @@ const CalificacionRow = ({alumnoIndex}) => {
 
     let alumnoName = useCacheCall(['Asignatura'],
         call => alumnoAddr && call("Asignatura", "datosAlumno", alumnoAddr)?.nombre
+    );
+
+    let notaFinal = useCacheCall(['Asignatura'],
+        call => alumnoAddr && call("Asignatura", "notaFinal", alumnoAddr)?.calificacion
     );
 
     let cells = useCacheCall(['Asignatura'], call => {
@@ -33,6 +38,9 @@ const CalificacionRow = ({alumnoIndex}) => {
             <th>A<sub>{alumnoIndex}</sub></th>
             <td>{alumnoName}</td>
             {cells}
+            <SoyAlguno coordinador profesor>
+                <td>{(notaFinal/ 100).toFixed(2)}</td>
+            </SoyAlguno>
         </tr>;
 };
 

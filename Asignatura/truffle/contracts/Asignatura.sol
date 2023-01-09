@@ -236,6 +236,13 @@ contract Asignatura {
         return evaluaciones.length - 1;
     }
 
+    function editEvaluacion(uint _indice, string memory _nombre, uint _fecha, uint _porcentaje, uint _minimo) soloCoordinador soloAbierta public {
+        require(_indice < evaluaciones.length, "El indice de la evaluacion a editar es invalido");
+        require(bytes(_nombre).length != 0, "El nombre de la evaluacion no puede ser vacio");
+ 
+        evaluaciones[_indice] = Evaluacion(_nombre, _fecha, _porcentaje, _minimo);
+    }
+
     /**
     * El numero de evaluaciones creadas.
     *
@@ -262,6 +269,21 @@ contract Asignatura {
         Nota memory nota = Nota(tipo, calificacion);
 
         calificaciones [alumno] [evaluacion] = nota;
+    }
+
+    function editCalifica(uint alumnoIndex, uint evaluacion, TipoNota tipo, uint calificacion) soloProfesor soloAbierta public {
+   
+        //Obtenemos el address del alumno a traves de su indice. 
+
+        address alumno = matriculas[alumnoIndex];
+
+        require(estaMatriculado(alumno), "Solo se pueden editar calificaciones de alumnos matriculados");
+        require(evaluacion < evaluaciones.length, "No se puede editar una evaluacion que no existe.");
+        require(calificacion <= 1000, "No se puede calificar con una nota superior a la maxima permitida");
+    
+        Nota memory nota = Nota(tipo, calificacion);
+
+        calificaciones[alumno][evaluacion] = nota;
     }
 
 
@@ -310,7 +332,7 @@ contract Asignatura {
     * @return calificacion La calificacion que ha sacado el alumno.
     */
 
-    function notaFinal (address _addr) soloCoordinador public view returns (TipoNota tipo, uint calificacion) {
+    function notaFinal (address _addr) soloProfesorYCoordinador public view returns (TipoNota tipo, uint calificacion) {
         return _notaFinal(_addr);
     }
 
@@ -393,6 +415,12 @@ contract Asignatura {
     modifier soloProfesor() {
         string memory _nombre = datosProfesor[msg.sender];
         require(bytes(_nombre).length != 0, "Solo permitido a un profesor");
+        _;
+    }
+
+    modifier soloProfesorYCoordinador() {
+        string memory _nombre = datosProfesor[msg.sender];
+        require((msg.sender == coordinador) || (bytes(_nombre).length != 0), "Solo permitido a un profesor o un coordinador");
         _;
     }
 
